@@ -1,0 +1,9 @@
+namespace PCL_CPP_Launcher
+{
+    [default_interface]
+    runtimeclass MainWindow : Microsoft.UI.Xaml.Window
+    {
+        MainWindow();
+        Int32 MyProperty;
+    }
+}

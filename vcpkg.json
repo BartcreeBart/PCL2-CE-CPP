@@ -1,0 +1,26 @@
+{
+  "name": "pcl2-ce-cpp",
+  "description": "PCL2-CE C++ Rewrite Version",
+  "version-string": "0.0.1",
+  "homepage": "https://github.com/BartcreeBart/PCL2-CE-CPP",
+  "license": "Custom",
+  "supports": "windows & (x64 | x86)",
+  "maintainers": [
+    "GTZ"
+  ],
+  "dependencies": [
+    {
+      "name": "nlohmann-json",
+      "platform": "windows"
+    },
+    {
+      "name": "yaml-cpp",
+      "platform": "windows"
+    },
+    {
+      "name": "miniz",
+      "platform": "windows"
+    }
+  ],
+  "builtin-baseline": "4334d8b4c8916018600212ab4dd4bbdc343065d1"
+}
