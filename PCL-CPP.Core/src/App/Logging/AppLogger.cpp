@@ -127,8 +127,8 @@ namespace PCL_CPP::Core::Logging {
 		std::tm tm;
 		localtime_s(&tm, &time);
 
-		// 使用 snprintf/stringstream 或者手动拼接，比 std::format 处理 time_t 更稳健
-		// 但既然引入了 std::format，我们可以利用它格式化整数的特性
+		// 使用 snprintf/stringstream 或者手动拼接，比 std::format 处理 time_t 更稳健(是么？)
+		// 但既然引入了 std::format，我们可以利用它格式化整数的特性（据说这样用开销最小？）
 		return std::format("{:04d}-{:02d}-{:02d} {:02d}:{:02d}:{:02d}.{:03d}",
 						   tm.tm_year + 1900,
 						   tm.tm_mon + 1,
