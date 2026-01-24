@@ -6,13 +6,13 @@
 
 **Plain Craft Launcher 2 社区版 - C++ 重制**
 
-PCL2-CE-CPP 是一个基于 **C++20** 和 **WinUI 3 (Windows App SDK)** 重新构建的、高性能 Minecraft 启动器。本项目是 [PCL2 社区版 (PCL2-CE)](https://github.com/PCL-Community/PCL2-CE) （同时也是 [Plain Craft Launcher 2 (PCL2)](https://github.com/Meloong-Git/PCL)）的 C++ 移植版本。
+PCL2-CE-CPP 是一个基于 **C++20** 和 **WinUI 3 (Windows App SDK)** 重新编构的、高性能(必须是) Minecraft 启动器。本项目是 [PCL2 社区版 (PCL2-CE)](https://github.com/PCL-Community/PCL2-CE) （同时也是 [Plain Craft Launcher 2 (PCL2)](https://github.com/Meloong-Git/PCL)）的 C++ 移植版本。
 
 > 🚧 **当前状态**: 活跃开发中 ("正在生产橡胶...")
 
 ### 依赖库
 
-本项目目前依赖以下开源库：
+本项目目前依赖以下开源库 ( 通过 **vcpkg包管理器** ) ：
 *   `nlohmann-json`
 *   `yaml-cpp`
 *   `miniz`
