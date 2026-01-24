@@ -120,9 +120,9 @@ namespace PCL_CPP::Core::Logging {
 	}
 
 	std::string AppLogger::GetTimestamp() {
-		auto now = std::chrono::system_clock::now();
-		auto time = std::chrono::system_clock::to_time_t(now);
-		auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()) % 1000;
+		std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
+		time_t time = std::chrono::system_clock::to_time_t(now);
+		std::chrono::milliseconds ms = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()) % 1000;
 
 		std::tm tm;
 		localtime_s(&tm, &time);
