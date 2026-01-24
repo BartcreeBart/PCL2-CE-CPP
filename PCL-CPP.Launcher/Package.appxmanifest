@@ -8,11 +8,11 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="e1f65d57-df47-48ed-8b2c-3ba01d2a596e"
+    Name="1a6a3389-45ca-4c5c-8a26-4cb10adb7928"
     Publisher="CN=sagta"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="e1f65d57-df47-48ed-8b2c-3ba01d2a596e" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="1a6a3389-45ca-4c5c-8a26-4cb10adb7928" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>PCL-CPP.Launcher</DisplayName>

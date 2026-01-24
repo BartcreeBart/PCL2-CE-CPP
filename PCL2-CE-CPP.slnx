@@ -1,0 +1,15 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="vcpkg.json" />
+  </Folder>
+  <Project Path="PCL-CPP.Core/PCL-CPP.Core.vcxproj" Id="0597b3bd-04cd-46b6-9bca-44acf0447164" />
+  <Project Path="PCL-CPP.Launcher/PCL-CPP.Launcher.vcxproj" Id="f4cfb899-2217-4d2c-82ac-23aefcc0c82c">
+    <Deploy />
+  </Project>
+  <Project Path="PCL-CPP.Test/PCL-CPP.Test.vcxproj" />
+</Solution>
