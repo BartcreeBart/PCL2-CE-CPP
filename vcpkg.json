@@ -6,7 +6,7 @@
   "license": "Custom",
   "supports": "windows & (x64 | x86)",
   "maintainers": [
-    "GTZ"
+    "GIGN"
   ],
   "dependencies": [
     {
@@ -22,5 +22,5 @@
       "platform": "windows"
     }
   ],
-  "builtin-baseline": "774bdd067fa3a5a49e1e8eba5efc891b3092df9b"
+  "builtin-baseline": "36d042a7e6e37e8ffec0ac398960b3dc0a3cdd4f"
 }
