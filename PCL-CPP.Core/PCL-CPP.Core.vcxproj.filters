@@ -45,6 +45,15 @@
     <ClInclude Include="src\App\Config\ConfigManager.h">
       <Filter>App\Config</Filter>
     </ClInclude>
+    <ClInclude Include="src\Launcher\Version\Arguments.h">
+      <Filter>Launcher\Version</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Launcher\Version\Library.h">
+      <Filter>Launcher\Version</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Launcher\Version\Rule.h">
+      <Filter>Launcher\Version</Filter>
+    </ClInclude>
     <ClInclude Include="src\Launcher\Version\VersionLocator.h">
       <Filter>Launcher\Version</Filter>
     </ClInclude>
@@ -64,6 +73,15 @@
     </ClCompile>
     <ClCompile Include="src\App\Config\ConfigManager.cpp">
       <Filter>App\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Launcher\Version\Arguments.cpp">
+      <Filter>Launcher\Version</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Launcher\Version\Library.cpp">
+      <Filter>Launcher\Version</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Launcher\Version\Rule.cpp">
+      <Filter>Launcher\Version</Filter>
     </ClCompile>
     <ClCompile Include="src\Launcher\Version\VersionLocator.cpp">
       <Filter>Launcher\Version</Filter>

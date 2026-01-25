@@ -1,7 +1,9 @@
 #include "pch.h"
-#include "CppUnitTest.h"
-#include "Launcher/Version/VersionLocator.h"
 #include "App/Logging/AppLogger.h"
+#include "CppUnitTest.h"
+#include "Launcher/Version/Arguments.h"
+#include "Launcher/Version/Library.h"
+#include "Launcher/Version/VersionLocator.h"
 #include <filesystem>
 #include <fstream>
 
@@ -19,11 +21,11 @@ namespace PCLCPPTest {
 		std::filesystem::create_directories(testRoot);
 		std::filesystem::path assetsDir = TEST_ASSETS_DIR;
 
-		// 1. Copy 1.18.2 (Vanilla)
+		// 1.18.2 (Vanilla)
 		std::filesystem::create_directories(testRoot / "1.18.2");
 		std::filesystem::copy_file(assetsDir / "1.18.2.json", testRoot / "1.18.2/1.18.2.json");
 
-		// 2. Copy 1.18.2-OptiFine (Standalone in this dataset)
+		// 1.18.2-OptiFine
 		std::filesystem::create_directories(testRoot / "1.18.2-OptiFine");
 		std::filesystem::copy_file(assetsDir / "1.18.2-OptiFine.json", testRoot / "1.18.2-OptiFine/1.18.2-OptiFine.json");
 	}
@@ -45,7 +47,7 @@ namespace PCLCPPTest {
 	}
 
 	TEST_METHOD(TestRealVersionParsing) {
-		// Test 1.18.2-OptiFine parsing (Standalone complex JSON)
+		// Test 1.18.2-OptiFine parsing
 		auto optifine = VersionLocator::GetVersion(testRoot, "1.18.2-OptiFine");
 		Assert::IsTrue(optifine.has_value(), L"GetVersion failed for OptiFine");
 
@@ -54,17 +56,16 @@ namespace PCLCPPTest {
 		Assert::AreEqual(std::string("net.minecraft.launchwrapper.Launch"), optifine->MainClass);
 		Assert::AreEqual(std::string("release"), optifine->Type);
 
-		// Verify libraries (Rough check of count)
-		const nlohmann::json_abi_v3_12_0::json &libs = optifine->RawData["libraries"];
+		// Verify libraries
+		const auto &libs = optifine->RawData["libraries"];
 		Assert::IsTrue(libs.size() > 10, L"Should have many libraries");
 
 		// Verify arguments
-		const nlohmann::json_abi_v3_12_0::json &gameArgs = optifine->RawData["arguments"]["game"];
+		const auto &gameArgs = optifine->RawData["arguments"]["game"];
 		Assert::IsTrue(gameArgs.size() > 0, L"Should have game arguments");
 	}
 
 	TEST_METHOD(TestInheritanceLogic_Synthetic) {
-		// Synthetic test for inheritance since Assets don't have it
 		std::filesystem::path inheritRoot = testRoot / "InheritanceTest";
 		std::filesystem::create_directories(inheritRoot);
 
@@ -90,6 +91,69 @@ namespace PCLCPPTest {
 		Assert::IsTrue(v.has_value());
 		Assert::AreEqual(std::string("ParentMain"), v->MainClass, L"Should inherit MainClass");
 		Assert::AreEqual((size_t) 2, v->RawData["libraries"].size(), L"Should merge libraries");
+	}
+
+	TEST_METHOD(TestLibraryFiltering) {
+		auto optifine = VersionLocator::GetVersion(testRoot, "1.18.2-OptiFine");
+		Assert::IsTrue(optifine.has_value());
+
+		std::map<std::string, bool> features;
+
+		int activeCount = 0;
+		bool foundWindowsNative = false;
+
+		const auto &libs = optifine->RawData["libraries"];
+		for (const auto &libJson : libs) {
+			Library lib = Library::Parse(libJson);
+			if (lib.IsActive(features)) {
+				activeCount++;
+
+				if (lib.IsNative()) {
+					// Check if it's windows native
+					if (lib.Natives.count("windows")) {
+						foundWindowsNative = true;
+						auto file = lib.GetApplicableFile(features);
+						Assert::IsTrue(file.has_value(), L"Native file should be resolvable");
+					}
+				}
+			}
+		}
+
+		Assert::IsTrue(activeCount > 0, L"Should have active libraries");
+		Assert::IsTrue(foundWindowsNative, L"Should find windows natives");
+	}
+
+	TEST_METHOD(TestArgumentParsing) {
+		auto optifine = VersionLocator::GetVersion(testRoot, "1.18.2-OptiFine");
+		Assert::IsTrue(optifine.has_value());
+
+		Arguments args = Arguments::Parse(optifine->RawData["arguments"]);
+
+		// Features override
+		std::map<std::string, bool> features;
+		features["has_custom_resolution"] = true;
+
+		std::map<std::string, std::string> subs;
+		subs["version_name"] = "1.18.2-OptiFine";
+		subs["auth_player_name"] = "Player";
+
+		auto gameArgs = args.GetGameArgs(subs, features);
+
+		// Check for --version 1.18.2-OptiFine
+		bool foundVer = false;
+		for (size_t i = 0; i < gameArgs.size(); i++) {
+			if (gameArgs[i] == "--version" && i + 1 < gameArgs.size()) {
+				if (gameArgs[i + 1] == "1.18.2-OptiFine") foundVer = true;
+			}
+		}
+		Assert::IsTrue(foundVer, L"Should find substituted version argument");
+
+		// Check for resolution (enabled by feature)
+		bool foundRes = false;
+		for (const auto &arg : gameArgs) {
+			if (arg == "--width") foundRes = true;
+		}
+		Assert::IsTrue(foundRes, L"Should find resolution argument due to feature enabled");
 	}
 	};
 }
