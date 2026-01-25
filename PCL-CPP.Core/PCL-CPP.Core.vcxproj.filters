@@ -19,6 +19,9 @@
     <Filter Include="App\Logging">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
     </Filter>
+    <Filter Include="App\Config">
+      <UniqueIdentifier>{7b30d60b-41f7-46a6-a0ff-a226da97b926}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -30,6 +33,12 @@
     <ClInclude Include="src\App\Logging\AppLogger.h">
       <Filter>App\Logging</Filter>
     </ClInclude>
+    <ClInclude Include="src\App\Config\ConfigContainer.h">
+      <Filter>App\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="src\App\Config\ConfigManager.h">
+      <Filter>App\Config</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PCL-CPP.Core.cpp">
@@ -40,6 +49,12 @@
     </ClCompile>
     <ClCompile Include="src\App\Logging\AppLogger.cpp">
       <Filter>App\Logging</Filter>
+    </ClCompile>
+    <ClCompile Include="src\App\Config\ConfigContainer.cpp">
+      <Filter>App\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="src\App\Config\ConfigManager.cpp">
+      <Filter>App\Config</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
