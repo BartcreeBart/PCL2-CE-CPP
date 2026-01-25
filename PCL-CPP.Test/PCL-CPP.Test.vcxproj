@@ -202,6 +202,7 @@
     <ClCompile Include="ConfigTest.cpp" />
     <ClCompile Include="LoggingTest.cpp" />
     <ClCompile Include="VersionTest.cpp" />
+    <ClCompile Include="LaunchPlannerTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

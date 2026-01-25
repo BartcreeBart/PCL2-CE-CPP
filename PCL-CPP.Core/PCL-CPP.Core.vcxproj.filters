@@ -28,6 +28,9 @@
     <Filter Include="Launcher\Version">
       <UniqueIdentifier>{5ba727de-389a-421b-859b-23a4e0f5087c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Launcher\Launch">
+      <UniqueIdentifier>{Launch-UUID-PLACEHOLDER}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -57,6 +60,9 @@
     <ClInclude Include="src\Launcher\Version\VersionLocator.h">
       <Filter>Launcher\Version</Filter>
     </ClInclude>
+    <ClInclude Include="src\Launcher\Launch\LaunchPlanner.h">
+      <Filter>Launcher\Launch</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PCL-CPP.Core.cpp">
@@ -85,6 +91,9 @@
     </ClCompile>
     <ClCompile Include="src\Launcher\Version\VersionLocator.cpp">
       <Filter>Launcher\Version</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Launcher\Launch\LaunchPlanner.cpp">
+      <Filter>Launcher\Launch</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

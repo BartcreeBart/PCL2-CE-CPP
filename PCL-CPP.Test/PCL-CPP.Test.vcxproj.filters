@@ -27,6 +27,9 @@
     <ClCompile Include="VersionTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="LaunchPlannerTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>源文件</Filter>
     </ClCompile>

@@ -189,6 +189,7 @@
     <ClInclude Include="src\Launcher\Version\Library.h" />
     <ClInclude Include="src\Launcher\Version\Rule.h" />
     <ClInclude Include="src\Launcher\Version\VersionLocator.h" />
+    <ClInclude Include="src\Launcher\Launch\LaunchPlanner.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -205,6 +206,7 @@
     <ClCompile Include="src\Launcher\Version\Library.cpp" />
     <ClCompile Include="src\Launcher\Version\Rule.cpp" />
     <ClCompile Include="src\Launcher\Version\VersionLocator.cpp" />
+    <ClCompile Include="src\Launcher\Launch\LaunchPlanner.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
