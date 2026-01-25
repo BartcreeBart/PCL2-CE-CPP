@@ -201,6 +201,7 @@
     <ClCompile Include="PCL-CPP.Test.cpp" />
     <ClCompile Include="ConfigTest.cpp" />
     <ClCompile Include="LoggingTest.cpp" />
+    <ClCompile Include="VersionTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -210,6 +211,11 @@
       <Project>{0597b3bd-04cd-46b6-9bca-44acf0447164}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>TEST_ASSETS_DIR=R"($(ProjectDir)Assets)";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

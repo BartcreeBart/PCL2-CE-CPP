@@ -22,6 +22,12 @@
     <Filter Include="App\Config">
       <UniqueIdentifier>{7b30d60b-41f7-46a6-a0ff-a226da97b926}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Launcher">
+      <UniqueIdentifier>{1e57174e-f986-4da4-86ad-e1099751e277}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Launcher\Version">
+      <UniqueIdentifier>{5ba727de-389a-421b-859b-23a4e0f5087c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -39,6 +45,9 @@
     <ClInclude Include="src\App\Config\ConfigManager.h">
       <Filter>App\Config</Filter>
     </ClInclude>
+    <ClInclude Include="src\Launcher\Version\VersionLocator.h">
+      <Filter>Launcher\Version</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PCL-CPP.Core.cpp">
@@ -55,6 +64,9 @@
     </ClCompile>
     <ClCompile Include="src\App\Config\ConfigManager.cpp">
       <Filter>App\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Launcher\Version\VersionLocator.cpp">
+      <Filter>Launcher\Version</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

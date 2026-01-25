@@ -185,6 +185,7 @@
     <ClInclude Include="src\App\Logging\AppLogger.h" />
     <ClInclude Include="src\App\Config\ConfigContainer.h" />
     <ClInclude Include="src\App\Config\ConfigManager.h" />
+    <ClInclude Include="src\Launcher\Version\VersionLocator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -197,6 +198,7 @@
     <ClCompile Include="src\App\Config\ConfigContainer.cpp" />
     <ClCompile Include="src\App\Config\ConfigManager.cpp" />
     <ClCompile Include="src\App\Logging\AppLogger.cpp" />
+    <ClCompile Include="src\Launcher\Version\VersionLocator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

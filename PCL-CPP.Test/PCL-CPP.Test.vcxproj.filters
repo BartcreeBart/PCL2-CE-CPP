@@ -24,6 +24,9 @@
     <ClCompile Include="LoggingTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="VersionTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
