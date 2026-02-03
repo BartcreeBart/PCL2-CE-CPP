@@ -8,7 +8,7 @@
 
 PCL2-CE-CPP 是一个基于 **C++20** 和 **WinUI 3 (Windows App SDK)** 重新编构的、高性能(必须是) Minecraft 启动器。本项目是 [PCL2 社区版 (PCL2-CE)](https://github.com/PCL-Community/PCL2-CE) （同时也是 [Plain Craft Launcher 2 (PCL2)](https://github.com/Meloong-Git/PCL)）的 C++ 移植版本。
 
-> 🚧 **当前状态**: 活跃开发中 ("正在生产轮毂...不要看单元测试，瞎写的")
+> 🚧 **当前状态**: 寒假作业做完了，活跃开发中 ("正在生产轮毂...不要看单元测试，瞎写的")
 
 ### 依赖库
 
