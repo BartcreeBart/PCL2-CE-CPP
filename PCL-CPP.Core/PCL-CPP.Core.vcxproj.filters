@@ -63,6 +63,12 @@
     <ClInclude Include="src\Launcher\Launch\LaunchPlanner.h">
       <Filter>Launcher\Launch</Filter>
     </ClInclude>
+    <ClInclude Include="src\Launcher\Launch\NativesUtils.h">
+      <Filter>Launcher\Launch</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Launcher\Launch\ProcessRunner.h">
+      <Filter>Launcher\Launch</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PCL-CPP.Core.cpp">
@@ -93,6 +99,12 @@
       <Filter>Launcher\Version</Filter>
     </ClCompile>
     <ClCompile Include="src\Launcher\Launch\LaunchPlanner.cpp">
+      <Filter>Launcher\Launch</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Launcher\Launch\NativesUtils.cpp">
+      <Filter>Launcher\Launch</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Launcher\Launch\ProcessRunner.cpp">
       <Filter>Launcher\Launch</Filter>
     </ClCompile>
   </ItemGroup>

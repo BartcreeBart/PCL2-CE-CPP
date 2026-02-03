@@ -3,7 +3,7 @@
   "description": "PCL2-CE C++ Rewrite Version",
   "version-string": "0.0.1",
   "homepage": "https://github.com/BartcreeBart/PCL2-CE-CPP",
-  "license": "Custom",
+  "license": "Apache-2.0",
   "supports": "windows & (x64 | x86)",
   "maintainers": [
     "GIGN"
