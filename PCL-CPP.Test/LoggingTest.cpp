@@ -1,8 +1,5 @@
 #include "pch.h"
-#include "CppUnitTest.h"
 #include "App/Logging/AppLogger.h"
-#include <filesystem>
-#include <fstream>
 #include <string>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;

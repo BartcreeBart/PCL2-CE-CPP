@@ -1,8 +1,5 @@
 #include "pch.h"
-#include "CppUnitTest.h"
 #include "App/Config/ConfigManager.h"
-#include <filesystem>
-#include <fstream>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace PCL_CPP::Core::Config;

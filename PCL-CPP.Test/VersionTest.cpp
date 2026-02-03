@@ -1,11 +1,8 @@
 #include "pch.h"
 #include "App/Logging/AppLogger.h"
-#include "CppUnitTest.h"
 #include "Launcher/Version/Arguments.h"
 #include "Launcher/Version/Library.h"
 #include "Launcher/Version/VersionLocator.h"
-#include <filesystem>
-#include <fstream>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace PCL_CPP::Core::Launcher::Version;
