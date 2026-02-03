@@ -7,6 +7,10 @@ using namespace PCL_CPP::Core::Logging;
 
 namespace PCL_CPP::Core::Config {
 
+	/**
+	 * @brief 从指定路径加载配置文件
+	 * @param path 配置文件路径
+	 */
 	void ConfigContainer::Load(const std::filesystem::path &path) {
 		std::unique_lock lock(m_mutex);
 		LOG_DEBUG("Loading config from: {}", path.string());
@@ -28,6 +32,10 @@ namespace PCL_CPP::Core::Config {
 		}
 	}
 
+	/**
+	 * @brief 将配置文件保存到指定路径
+	 * @param path 配置文件保存路径
+	 */
 	void ConfigContainer::Save(const std::filesystem::path &path) const {
 		std::shared_lock lock(m_mutex);
 		try {
@@ -38,7 +46,7 @@ namespace PCL_CPP::Core::Config {
 
 			std::ofstream file(path);
 			if (file.is_open()) {
-				file << m_data.dump(4); // 缩进
+				file << m_data.dump(4); // 使用 4 空格缩进
 				LOG_DEBUG("Config saved successfully: {}", path.string());
 			}
 		} catch (const std::exception &e) {
@@ -46,11 +54,19 @@ namespace PCL_CPP::Core::Config {
 		}
 	}
 
+	/**
+	 * @brief 获取原始 JSON 对象
+	 * @return nlohmann::json 对象
+	 */
 	nlohmann::json ConfigContainer::GetJson() const {
 		std::shared_lock lock(m_mutex);
 		return m_data;
 	}
 
+	/**
+	 * @brief 设置原始 JSON 对象
+	 * @param data 要设置的 JSON 数据
+	 */
 	void ConfigContainer::SetJson(const nlohmann::json &data) {
 		std::unique_lock lock(m_mutex);
 		m_data = data;
