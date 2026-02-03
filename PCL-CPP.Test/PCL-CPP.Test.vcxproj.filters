@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="PCL-CPP.Test.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="ConfigTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
